@@ -37,7 +37,7 @@
             write.append(p);
         }
 
-        const socket=io();
+        const socket=io().connect("http://localhost:3001");
         function send(){
             const mesage=document.getElementById("msg");
             const msg=mesage.value;

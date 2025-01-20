@@ -37,7 +37,13 @@
             write.append(p);
         }
 
-        const socket=io().connect("https://backend-five-livid-48.vercel.app/");
+        // const socket=io().connect("https://backend-five-livid-48.vercel.app/");
+        const socket = io("http://localhost:3001");
+
+        socket.on("connect", () => {
+            console.log("Connected to server");
+        });
+        
         function send(){
             const mesage=document.getElementById("msg");
             const msg=mesage.value;

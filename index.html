@@ -38,7 +38,9 @@
         }
 
         // const socket=io().connect("https://backend-five-livid-48.vercel.app/");
-        const socket = io("https://backend-five-livid-48.vercel.app/");
+        const socket = io('https://backend-five-livid-48.vercel.app', {
+            transports: ['websocket'], // Only use WebSocket
+        });
 
         socket.on("connect", () => {
             console.log("Connected to server");

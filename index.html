@@ -8,17 +8,11 @@
 <body>
     <input type="text" name="message" id="msg" placeholder="enter your message">
     <button type="submit" onclick="send()" id="send">send</button>
-    <form action="/uploads" method="post" enctype="multipart/form-data">
-        <input name="profileImage" type="file">
-        <button type="submit">upload</button>
-    </form>
     <div id="viewMessage">
-        
     </div>
 </body>
 <script src="https://cdn.socket.io/4.6.1/socket.io.min.js" crossorigin="anonymous"></script>
     <script>
-        import { io } from "socket.io-client";
         const btn=document.getElementById('msg');
 
         btn.addEventListener('keypress',(event)=>{
@@ -58,7 +52,6 @@
         }
         socket.on('msg',(msg)=>{
             console.log(msg);
-            // var divi=document.getElementById('viewMessage');
             addtext(msg);
         })
 

@@ -44,6 +44,12 @@
             console.log("Connected to WebSocket Server:", socket.id);
         });
 
+        socket.on("start" , (v)=>{
+            for(var i =0; i<v.length ; i++){
+                addtext(v[i]);
+            }
+        })
+
         socket.on("msg", (message) => {
             console.log("New message:", message);
         });

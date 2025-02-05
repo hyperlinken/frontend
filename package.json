@@ -10,6 +10,5 @@
   "description": "",
   "dependencies": {
     "socket.io": "^4.8.1"
-  },
-    "backendUrl": "https://terrific-enthusiasm-production.up.railway.app/socket.io/socket.io.js"
+  }
 }

@@ -84,7 +84,7 @@ p{
 }
 
 #rpl{
-    background:#7B66FF;
+    background:#80B3FF;
     width: fit-content;
     border-radius: 7px;
     margin: 2px;
@@ -105,5 +105,4 @@ p{
     background-color: #C5FFF8; 
     padding: 2px;
     border-radius: 5px 5px 3px 3px;
-    border: 1px solid #7B66FF;
 }

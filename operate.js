@@ -17,6 +17,7 @@ document.getElementById("viewMessage").addEventListener("mousedown", function (e
 });
 
 function addtext(text){
+    console.log(text);
     const p = document.createElement('p');
     const rpl = document.createElement('div');
     

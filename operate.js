@@ -1,4 +1,6 @@
 const btn=document.getElementById('msg');
+replyshow = document.getElementById("replied");
+
 btn.addEventListener('keypress',(event)=>{
     if(event.keyCode===13){
         event.preventDefault();
@@ -6,14 +8,37 @@ btn.addEventListener('keypress',(event)=>{
     }
 })
 
+
+document.getElementById("viewMessage").addEventListener("mousedown", function (event) {
+    replyshow.innerText = "";
+    if (event.target.tagName.toLowerCase() === "p") { // Check if clicked element is <p>
+        makeDraggable(event.target);
+    }
+});
+
 function addtext(text){
     const p = document.createElement('p');
-    const txt=document.createTextNode(text);
+    const rpl = document.createElement('div');
+    
+    const txt = document.createTextNode(text.message);
+
+    p.setAttribute("id" , "reply");
+    rpl.setAttribute("id" , "rpl")
+    
     const write = document.getElementById("viewMessage");
 
+    if( text.replied != ''){
+        rplshow = document.createElement('div');
+        rplshow.innerText = text.replied + ": ";
+        rplshow.setAttribute("id" , "rplshow")
+        rpl.append(rplshow);
+    }
     p.appendChild(txt);
-    write.append(p);
+    rpl.append(p);
+    write.append(rpl);
+    makeDraggable(p);
     write.scrollTop = write.scrollHeight;
+    replyshow.innerText = '';
 }
 
 const socket = io("wss://terrific-enthusiasm-production.up.railway.app", {
@@ -36,7 +61,7 @@ socket.on("msg", (message) => {
 
 function send(){
     const mesage=document.getElementById("msg");
-    const msg=mesage.value;
+    const msg = [mesage.value , replyshow.innerText];           //ye string se list banaya
     mesage.value='';
     socket.emit('user-msg',msg);
 }
@@ -44,3 +69,7 @@ socket.on('msg',(msg)=>{
     console.log(msg);
     addtext(msg);
 })
+
+socket.on('disconnect', () => {
+    console.log('User disconnected:', socket.id);
+});

@@ -97,8 +97,12 @@ p{
     user-select: none;
 }
 #rplshow{
-    margin: 10px;
+    margin: 2px;
+    background-color: #f8f0e1;
+    border-radius: 10px 10px 5px 5px;
+    padding: 2px;
 }
 #replied{
-    padding-left: 20px;
+    width: fit-content;
+    background-color: #ffddb3;
 }

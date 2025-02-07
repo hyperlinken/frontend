@@ -85,11 +85,6 @@ p{
     width: fit-content; 
 }
 
-p:hover{
-    background-color: #d27b10;
-    cursor: grab;
-}
-
 #rpl{
     background: #d27b10;
     width: fit-content;
@@ -98,8 +93,12 @@ p:hover{
     padding: 2px;
     display: flex;
     flex-direction: column;
+    cursor: grab;
+    user-select: none;
 }
-
 #rplshow{
     margin: 10px;
+}
+#replied{
+    padding-left: 20px;
 }

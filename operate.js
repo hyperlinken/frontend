@@ -11,7 +11,7 @@ btn.addEventListener('keypress',(event)=>{
 
 document.getElementById("viewMessage").addEventListener("mousedown", function (event) {
     replyshow.innerText = "";
-    if (event.target.tagName.toLowerCase() === "p") { // Check if clicked element is <p>
+    if (event.target.id === "rpl") { // Check if clicked element is <p>
         makeDraggable(event.target);
     }
 });

@@ -20,24 +20,33 @@ body{
     background-color: #ffd6a4;
     width: 100%;
     height: 50px;
-    bottom: 0;
     padding-bottom: 5px;
+    bottom: 0px;
     display: flex;
     flex-direction: row;
     align-content: center;
     justify-content: center;
     align-items: center;
     position: fixed;
+    padding-top: 20px;
+}
+
+#replied{
+    position: absolute;
+    width: 100%;
+    height: 20px;
+    top: 0;
+    /* background-color: aqua; */
 }
 
 #viewMessage{
     position: absolute;
-    height: calc(100% - 55px);
+    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
     overflow-y: auto;
-    padding-bottom: 60px;
+    padding-bottom: 75px;
 }
 
 ::-webkit-scrollbar{
@@ -71,6 +80,26 @@ body{
 }
 
 p{
-    margin-left: 5px;
+    margin-left: 20px;
+    margin-right: 10px;
+    width: fit-content; 
+}
+
+p:hover{
+    background-color: #d27b10;
+    cursor: grab;
+}
+
+#rpl{
+    background: #d27b10;
+    width: fit-content;
+    border-radius: 7px;
+    margin: 2px;
     padding: 2px;
+    display: flex;
+    flex-direction: column;
+}
+
+#rplshow{
+    margin: 10px;
 }

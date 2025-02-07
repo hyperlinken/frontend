@@ -17,7 +17,6 @@ document.getElementById("viewMessage").addEventListener("mousedown", function (e
 });
 
 function addtext(text){
-    console.log(text);
     const p = document.createElement('p');
     const rpl = document.createElement('div');
     
@@ -62,7 +61,7 @@ socket.on("msg", (message) => {
 
 function send(){
     const mesage=document.getElementById("msg");
-    const msg = [mesage.value , replyshow.innerText];           //ye string se list banaya
+    const msg = {message: mesage.value ,replied: replyshow.innerText};           //ye string se list banaya
     mesage.value='';
     socket.emit('user-msg',msg);
 }

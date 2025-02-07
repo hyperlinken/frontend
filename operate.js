@@ -11,7 +11,7 @@ btn.addEventListener('keypress',(event)=>{
 
 document.getElementById("viewMessage").addEventListener("mousedown", function (event) {
     replyshow.innerText = "";
-    if (event.target.id === "rpl") { // Check if clicked element is <p>
+    if (event.target.id === "rpl") { // Check if clicked element has id 'rpl'
         makeDraggable(event.target);
     }
 });
@@ -36,7 +36,7 @@ function addtext(text){
     p.appendChild(txt);
     rpl.append(p);
     write.append(rpl);
-    makeDraggable(p);
+    makeDraggable(rpl);
     write.scrollTop = write.scrollHeight;
     replyshow.innerText = '';
 }
